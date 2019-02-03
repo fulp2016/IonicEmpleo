@@ -5,6 +5,7 @@ import { NavController } from 'ionic-angular';
 import { LoginPage } from './../login/login';
 import { DetalleOfertaPage } from './../detalle-oferta/detalle-oferta';
 import { GlobalProvider } from '../../providers/global/global';
+import { global } from '@angular/core/src/util';
 
 @Component({
   selector: 'page-home',

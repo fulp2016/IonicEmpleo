@@ -1,6 +1,8 @@
 import { OfertasProvider } from './../../providers/ofertas/ofertas';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { GlobalProvider } from '../../providers/global/global';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the DetalleOfertaPage page.
@@ -19,7 +21,8 @@ export class DetalleOfertaPage {
     constructor(
         public navCtrl: NavController, 
         public navParams: NavParams,
-        public Ofertas: OfertasProvider) {
+        public Ofertas: OfertasProvider,
+        public global: GlobalProvider) {
         this.idOferta = this.navParams.get('idOferta');
     }
 
@@ -34,6 +37,10 @@ export class DetalleOfertaPage {
                 console.error(error);
             }
         );
+    }
+
+    goLogin() {
+        this.navCtrl.push(LoginPage)
     }
 
 }
