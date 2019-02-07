@@ -5,8 +5,8 @@ const apiUrl = 'https://areaprivada.fulp.es/api/Ofertas';
 
 const options = {
   headers: {
-      'Content-Type': 'application/json'/*,
-      'Authorization': 'Bearer '.$accessToken*/
+      'Content-Type': 'application/json',
+      /*'Authorization': 'Bearer '.$accessToken*/
   }
 };
 
