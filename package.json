@@ -1,9 +1,9 @@
 {
-  "name": "ionic4-start-theme",
-  "description": "Ionic 4 Start Theme",
+  "name": "appempleo",
+  "description": "Aplicación para la busqueda de empleo",
   "version": "1.0.0",
-  "author": "Ionic Theme",
-  "homepage": "https://ionictheme.com",
+  "author": "Jose Robaina",
+  "homepage": "https://www.fulp.es",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -28,8 +28,6 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.0.0",
     "@ionic/pro": "2.0.4",
-    "cordova-android": "7.0.0",
-    "cordova-ios": "4.5.5",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
     "core-js": "^2.5.4",
     "ionicons": "4.5.5",
@@ -66,9 +64,6 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-ionic-keyboard": {}
-    },
-    "platforms": [
-      "android"
-    ]
+    }
   }
 }

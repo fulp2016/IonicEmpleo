@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.fulp.appempleo" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Empleo</name>
-    <description>Buscador de empleo</description>
-    <author email="jr_robaina@hotmail.com" href="https://ionictheme.com">Jose Robaina</author>
+<widget id="com.fulp.empleo" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>AppEmpleo</name>
+    <description>Aplicación para la busqueda de empleo</description>
+    <author email="jr_robaina@hotmail.com" href="https://www.fulp.es">Jose Robaina</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -81,6 +81,6 @@
     <plugin name="cordova-plugin-device" spec="2.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0" />
+    <engine name="android" spec="~7.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.1.3" />
-    <engine name="android" spec="7.0.0" />
 </widget>
