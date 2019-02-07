@@ -1,7 +1,8 @@
 {
-  "name": "AppEmpleo",
+  "name": "ionic4",
   "integrations": {
     "cordova": {}
   },
-  "type": "ionic-angular"
+  "type": "angular",
+  "id": "3fff720e"
 }

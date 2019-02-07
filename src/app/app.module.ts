@@ -1,57 +1,44 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import { RouteReuseStrategy } from '@angular/router';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { DetalleOfertaPage } from '../pages/detalle-oferta/detalle-oferta';
-import { LoginPage } from './../pages/login/login';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { TabsPage } from '../pages/tabs/tabs';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+// Modal Pages
+import { DetalleOfertaPageModule } from './pages/detalle-oferta/detalle-oferta.module';
+import { ImagePageModule } from './pages/modal/image/image.module';
+import { SearchFilterPageModule } from './pages/modal/search-filter/search-filter.module';
 
-import { HttpClientModule } from '@angular/common/http';
-import { OfertasProvider } from '../providers/ofertas/ofertas';
-import { LoginProvider } from '../providers/login/login';
-import { GlobalProvider } from '../providers/global/global';
+// Components
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 
 @NgModule({
-  declarations: [
-    MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage,
-    DetalleOfertaPage,
-    LoginPage
-  ],
+  declarations: [AppComponent, NotificationsComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    ImagePageModule,
+    DetalleOfertaPageModule,
+    SearchFilterPageModule
   ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage,
-    DetalleOfertaPage,
-    LoginPage
-  ],
+  entryComponents: [NotificationsComponent],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    OfertasProvider,
-    LoginProvider,
-    GlobalProvider
-  ]
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
+  bootstrap: [AppComponent]
 })
+
 export class AppModule {}

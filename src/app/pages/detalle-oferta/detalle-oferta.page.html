@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+        <ion-button size="small" shape="round" (click)="closeModal()" color="tertiary">
+            <ion-icon slot="start" name="close"></ion-icon> Close
+        </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+  
+    <div class="bg-profile" text-center padding>
+        <img src="assets/img/ionic4start-ico.png">
+    </div>
+  
+    <ion-card class="bg-white" no-margin>
+        <ion-card-content>
+            <h1 margin-bottom>
+                <ion-text color="primary"><strong>{{ Detalle?.ASUNTO }}</strong></ion-text>
+            </h1>
+            
+            <ion-row>
+                <ion-col *ngIf="Detalle?.TIPO_SALARIO2!= 'No especificado'">
+                    <div class="extraInfo">
+                        <ion-icon name="logo-euro"></ion-icon>
+                        {{ Detalle?.TIPO_SALARIO2 }}
+                    </div>
+                </ion-col>
+                <ion-col *ngIf="Detalle?.TIPO_JORNADA2!= 'No especificado'">
+                    <div class="extraInfo">
+                        <ion-icon name="time"></ion-icon>
+                        {{ Detalle?.TIPO_JORNADA2 }}
+                    </div>
+                </ion-col>
+                <ion-col *ngIf="Detalle?.TIPO_CONTRATO2!= 'No especificado'">
+                    <div class="extraInfo">
+                        <ion-icon name="document"></ion-icon>
+                        {{ Detalle?.TIPO_CONTRATO2 }}
+                    </div>
+                </ion-col>
+            </ion-row>
+            <p text-justify>
+                {{ Detalle?.DESC_GENERAL }}
+            </p>
+        </ion-card-content>
+        <ion-row>
+            <ion-col *ngIf="global.CodPersonal != '0'">
+                <ion-button icon-left size="medium" expand="full" shape="round" color="primary" (click)="goToInscripcion()" tappable>
+                    <ion-icon name="log-in"></ion-icon>
+                    Inscribirme
+                </ion-button>
+            </ion-col>
+            <ion-col *ngIf="global.CodPersonal == '0'">
+                <ion-button icon-left size="medium" expand="full" shape="round" color="primary" (click)="goToLogin()" tappable>
+                    <ion-icon name="log-in"></ion-icon>
+                    Autenticarme
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+  </ion-content>

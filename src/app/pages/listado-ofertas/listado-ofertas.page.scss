@@ -1,0 +1,41 @@
+:host {
+    ion-content {
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        --background: var(--ion-color-light);
+    }
+
+    ion-item {
+        border-radius: 0;
+        border-bottom: 1px dotted var(--ion-color-medium);
+    }
+
+    ion-card {
+        &.no-radius {
+            border-radius: 0;
+        }      
+        ion-card-content{
+            font-size: 14px;
+
+            ion-card-title{
+                font-size: 20px;
+                margin-bottom: 10px;
+            } 
+
+            .extraInfo{
+                font-size: 12px;
+                margin-right: 5px;
+                text-align: center;
+                &:first-child{
+                    text-align: left !important;
+                }
+                &:last-child{
+                    text-align: right;
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+    
+}

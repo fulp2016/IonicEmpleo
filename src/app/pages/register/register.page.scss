@@ -1,0 +1,8 @@
+:host {
+  ion-content {
+    ion-item{
+      --padding-start: 0;
+    }
+    --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary))
+  }
+}
