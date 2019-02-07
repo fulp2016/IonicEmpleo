@@ -77,4 +77,8 @@ export class AppComponent {
   goToLogin(){
     this.navCtrl.navigateForward('login');
   }
+
+  goToRegistro(){
+    this.navCtrl.navigateForward('register');
+  }
 }

@@ -27,11 +27,13 @@ export class LoginPage implements OnInit {
   ) { }
 
   ionViewWillEnter() {
+    if(this.global.CodPersonal!='0'){
+      this.navCtrl.navigateRoot('/');
+    }
     this.menuCtrl.enable(false);
   }
 
   ngOnInit() {
-
     this.onLoginForm = this.formBuilder.group({
       'user': [null, Validators.compose([
         Validators.required
@@ -133,7 +135,7 @@ export class LoginPage implements OnInit {
 
   // // //
   goToRegister() {
-    this.navCtrl.navigateRoot('/register');
+    this.navCtrl.navigateForward('/register');
   }
 
   goToHome() {

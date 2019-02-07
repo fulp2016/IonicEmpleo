@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController, MenuController, LoadingController } from '@ionic/angular';
+import { VariablesGlobalesService } from 'src/app/services/variables-globales.service';
+
 
 @Component({
   selector: 'app-register',
@@ -14,10 +16,14 @@ export class RegisterPage implements OnInit {
     public navCtrl: NavController,
     public menuCtrl: MenuController,
     public loadingCtrl: LoadingController,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public global: VariablesGlobalesService
   ) { }
 
   ionViewWillEnter() {
+    if(this.global.CodPersonal!='0'){
+      this.navCtrl.navigateRoot('/');
+    }
     this.menuCtrl.enable(false);
   }
 
@@ -60,12 +66,12 @@ export class RegisterPage implements OnInit {
 
     loader.present();
     loader.onWillDismiss().then(() => {
-      this.navCtrl.navigateRoot('/home-results');
+      this.navCtrl.navigateRoot('/');
     });
   }
 
   // // //
   goToLogin() {
-    this.navCtrl.navigateRoot('/');
+    this.navCtrl.navigateRoot('/login');
   }
 }

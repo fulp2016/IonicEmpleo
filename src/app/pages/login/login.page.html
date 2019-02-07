@@ -21,7 +21,7 @@
     </div>
 
     <!-- Login form -->
-    <form [formGroup]="onLoginForm" class="list-form">
+    <form [formGroup]="onLoginForm" class="list-form" (keyup.enter)="LoginUser()">
       <ion-item no-padding class="animated fadeInUp">
         <ion-label position="floating">
           <ion-icon name="mail" item-start></ion-icon>
@@ -48,7 +48,6 @@
         </ion-text>
         </p>
     </form>
-
     <p text-right tappable (click)="forgotPass()" class="paz">
       <ion-text color="light">
         <strong>Forgot Pass?</strong>
@@ -60,13 +59,13 @@
         <ion-icon name="log-in"></ion-icon>
         Signin
       </ion-button>
-
+      <!--
       <p text-center>
         <ion-text color="light">
           Or Signin with:
         </ion-text>
       </p>
-
+      
       <ion-grid class="btn-group">
         <ion-row>
           <ion-col size="4">
@@ -86,9 +85,9 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-
+      -->
     </div>
-
+  
     <!-- Other links -->
     <div text-center margin-top>
       <span (click)="goToRegister()" class="paz" tappable>

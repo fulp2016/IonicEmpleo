@@ -27,13 +27,18 @@
               </ion-menu-toggle>
             </ion-label>
           </ion-item>
-          <ion-col margin-bottom *ngIf="global.CodPersonal == '0'">
-              <ion-button icon-left size="small" expand="full" shape="round" color="primary" (click)="goToLogin()" tappable>
+          <ion-row>
+            <ion-col margin-bottom *ngIf="global.CodPersonal == '0'">
+              <ion-button icon-left size="small" expand="block" shape="round" color="primary" (click)="goToLogin()" tappable>
                   <ion-icon name="log-in"></ion-icon>
-                  Autenticarme
+                  LogIn
               </ion-button>
-          </ion-col>
-
+              <ion-button icon-left size="small" expand="block" shape="round" color="secondary" (click)="goToRegistro()" tappable>
+                  <ion-icon name="log-in"></ion-icon>
+                  SingUp
+              </ion-button>
+            </ion-col>
+          </ion-row>
         </ion-toolbar>
       </ion-header>
 
