@@ -64,8 +64,8 @@ export class AppComponent {
     }).catch(() => {});
   }
 
-  goToEditProgile() {
-    this.navCtrl.navigateForward('edit-profile');
+  goToProfile() {
+    this.navCtrl.navigateRoot('profile');
   }
 
   logout() {

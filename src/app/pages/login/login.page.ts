@@ -19,7 +19,6 @@ export class LoginPage implements OnInit {
     public menuCtrl: MenuController,
     public toastCtrl: ToastController,
     public alertCtrl: AlertController,
-    public loadingCtrl: LoadingController,
     private formBuilder: FormBuilder,
     public loadingController: LoadingController,
     public global: VariablesGlobalesService,
@@ -61,7 +60,6 @@ export class LoginPage implements OnInit {
             } else {
               this.PassError();
             }
-            
         },
         (error) =>{
             console.error(error);
@@ -90,8 +88,8 @@ export class LoginPage implements OnInit {
 
   async forgotPass() {
     const alert = await this.alertCtrl.create({
-      header: 'Forgot Password?',
-      message: 'Enter you email address to send a reset link password.',
+      header: 'Has olvidado tu contraseña?',
+      message: 'Indicanos tu email y te enviaremos un email.',
       inputs: [
         {
           name: 'email',
@@ -108,9 +106,9 @@ export class LoginPage implements OnInit {
             console.log('Confirm Cancel');
           }
         }, {
-          text: 'Confirm',
+          text: 'Enviar',
           handler: async () => {
-            const loader = await this.loadingCtrl.create({
+            const loader = await this.loadingController.create({
               duration: 2000
             });
 
@@ -118,7 +116,7 @@ export class LoginPage implements OnInit {
             loader.onWillDismiss().then(async l => {
               const toast = await this.toastCtrl.create({
                 showCloseButton: true,
-                message: 'Email was sended successfully.',
+                message: 'Email enviado correctamente.',
                 duration: 3000,
                 position: 'bottom'
               });
