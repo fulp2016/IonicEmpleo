@@ -28,10 +28,10 @@ export class AppComponent {
 
     this.appPages = [
       {
-        title: 'Home',
-        url: '/home-results',
+        title: 'My Profile',
+        url: '/profile',
         direct: 'root',
-        icon: 'home'
+        icon: 'contact'
       },
       {
         title: 'Listado Ofertas',
@@ -44,13 +44,6 @@ export class AppComponent {
         url: '/about',
         direct: 'forward',
         icon: 'information-circle-outline'
-      },
-
-      {
-        title: 'App Settings',
-        url: '/settings',
-        direct: 'forward',
-        icon: 'cog'
       }
     ];
 
