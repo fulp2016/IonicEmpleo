@@ -19,6 +19,9 @@ import { SearchFilterPageModule } from './pages/modal/search-filter/search-filte
 // Components
 import { NotificationsComponent } from './components/notifications/notifications.component';
 
+//Push Notification - One Signal
+import { OneSignal } from '@ionic-native/onesignal/ngx'
+
 
 @NgModule({
   declarations: [AppComponent, NotificationsComponent],
@@ -36,6 +39,7 @@ import { NotificationsComponent } from './components/notifications/notifications
   providers: [
     StatusBar,
     SplashScreen,
+    OneSignal,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

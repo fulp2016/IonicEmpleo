@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
-import { Platform, NavController } from '@ionic/angular';
+import { Platform, NavController, AlertController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { OneSignal } from '@ionic-native/onesignal/ngx'
 
 import { Pages } from './interfaces/pages';
 
@@ -23,6 +24,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     public navCtrl: NavController,
+    private oneSignal: OneSignal,
+    private alertCtrl: AlertController,
     public global: VariablesGlobalesService
   ) {
 
@@ -54,7 +57,23 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.handlerNotifications();
     }).catch(() => {});
+  }
+
+  private handlerNotifications(){
+    this.oneSignal.startInit('6b590092-d2be-4bda-8da2-0b3e69d12c9e','781550777394');
+    this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
+    this.oneSignal.handleNotificationOpened()
+    .subscribe( async jsonData => {
+      const alert = await this.alertCtrl.create({
+        header: jsonData.notification.payload.title,
+        message: jsonData.notification.payload.body,
+        buttons: ['OK']
+      });
+      alert.present();
+    });
+    this.oneSignal.endInit();
   }
 
   goToProfile() {
